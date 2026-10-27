@@ -75,15 +75,14 @@ The same seed gives the same cases and byte-identical result files. The full con
 revisiontrace/
 ├── revisiontrace.py      # graph, evidence, oracle, strategies, generator, scorer, report
 ├── llm_eval.py           # optional local language model arm
-├── figures/              # the article diagrams as SVG
 └── results/seed2026/     # reference outputs: console output, CSV files, failure traces
 ```
 
-A run of `revisiontrace.py` writes: `results_summary.csv`, `ablation.csv`, `per_case.csv`, `cases.json`, `failure_traces.txt`, `featured_stale.svg` and `featured_collateral.svg`.
+A run of `revisiontrace.py` writes: `results_summary.csv`, `ablation.csv`, `per_case.csv`, `cases.json`, `failure_traces.txt`,.
 
 ## What it models
 
-![A small dependency graph](figures/structure.svg)
+A small dependency graph
 
 **Graph.** Facts feed conclusions. Conclusions feed other conclusions. A conclusion that nothing else depends on is a *decision*. Each conclusion uses one rule: `AND`, `OR`, or `k-of-n`. Every graph also carries a small independent branch, so a change in one place can be checked for disturbing another. A typical case has about 12 conclusions (4 to 22) built on about 10 facts, with chains two to five conclusions deep.
 
@@ -133,7 +132,7 @@ Each conclusion is compared three ways: what it held before, what the oracle exp
 - **Consistent is not the same as correct.** The sticky strategy ended in the same state under every reordering in 98% of multi-update cases, yet that state was right in only 75%.
 - **What makes revision work.** An explicit record of what depends on what, plus a rule to propagate until values stop changing. In the propagation-limit ablation, exact agreement is 8.0% at zero hops, 59.0% at one, 90.3% at two, 99.3% at three and 100% at four. Incremental revision used about a quarter of the node evaluations of full recomputation (5.2 against 21.9 per update).
 
-![Exact final-state agreement](figures/agreement.svg)
+Exact final-state agreement
 
 ### Robustness
 
