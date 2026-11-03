@@ -6,7 +6,7 @@
 
 Most evaluations check whether a system can answer from the current evidence. This repo checks what happens next: new evidence arrives, and the system has to fix the conclusions it already stored.
 
-Read the full write-up on Towards Data Science → **[We Taught AI to Answer Questions. Who Taught It to Change Its Mind?](https://towardsdatascience.com/author/emmimalp.alexander/)**
+Read the full write-up on Towards Data Science → **[We Taught AI to Answer Questions. Who Taught It to Change Its Mind?](https://towardsdatascience.com/we-taught-ai-to-answer-questions-who-taught-it-to-change-its-mind/)**
 
 Standard library only. No API keys, no network calls, no third-party packages.
 
